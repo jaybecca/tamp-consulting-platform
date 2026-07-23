@@ -86,8 +86,184 @@ font-weight:bold;
 .features,
 .testimonials,
 .contact{
-padding:80px 0;
+    background:#f8fbff;
+    padding:80px 0;
 }
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+}
+
+.contact-info{
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.contact-info h3{
+    color:#005B96;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.contact-item i{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#F58220;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.contact-form{
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.contact-form textarea{
+    resize:none;
+}
+
+.contact-form button{
+    width:100%;
+    background:#005B96;
+    color:#fff;
+    border:none;
+    padding:15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#F58220;
+}
+
+/*=========================================
+        CONTACT DETAILS
+==========================================*/
+
+.contact-details{
+
+    margin-top:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.contact-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #005B96,
+        #fafdff
+    );
+
+    color:#fff;
+
+    font-size:22px;
+
+    box-shadow:0 10px 25px rgba(0,91,150,.20);
+
+    flex-shrink:0;
+
+}
+
+.contact-text h4{
+
+    margin:0;
+
+    color:#005B96;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.contact-text p{
+
+    margin-top:6px;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+.contact-text a{
+
+    display:inline-block;
+
+    margin-top:6px;
+
+    text-decoration:none;
+
+    color:#F58220;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.contact-text a:hover{
+
+    color:#005B96;
+
+}
+
 
 h2{
 text-align:center;
@@ -216,3 +392,4 @@ grid-template-columns:1fr;
 }
 
 }
+

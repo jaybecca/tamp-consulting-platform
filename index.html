@@ -30,7 +30,11 @@
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/whatsaap.css">
 
 </head>
 
@@ -226,7 +230,7 @@
 
         <div>
 
-            <h2>Get In Touch</h2>
+            <h2>LET'S CONNECT</h2>
 
             <form>
 
@@ -243,19 +247,123 @@
 
             </form>
 
-            <p>
-                📍 Victoria Island, Lagos
-            </p>
+            <div class="contact-details">
 
-            <p>
-                📞 +234-915-234-5735
-            </p>
+    <div class="contact-item">
+<!-- Contact Information -->
+
+<div class="contact-details">
+
+    <!-- Location -->
+
+    <div class="contact-item">
+
+        <div class="contact-icon">
+
+            <i class="fas fa-map-marker-alt"></i>
+
+        </div>
+
+        <div class="contact-text">
+
+            <h4>Office Location</h4>
+
+            <p>Victoria Island, Lagos, Nigeria</p>
 
         </div>
 
     </div>
 
+    <!-- Phone -->
+
+    <div class="contact-item">
+
+        <div class="contact-icon">
+
+            <i class="fas fa-phone-alt"></i>
+
+        </div>
+
+        <div class="contact-text">
+
+            <h4>Call Us</h4>
+
+            <a href="tel:+2349152345735">
+
+                +234 915 234 5735
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Email -->
+
+    <div class="contact-item">
+
+        <div class="contact-icon">
+
+            <i class="fas fa-envelope"></i>
+
+        </div>
+
+        <div class="contact-text">
+
+            <h4>Email Us</h4>
+
+            <a href="mailto:info@tampconsulting.space">
+
+                info@tampconsulting.space
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+    
+
 </section>
+
+
+
+<!--=========================================
+        BACK TO TOP BUTTON
+==========================================-->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to Top"
+>
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
+    <!--=========================================
+        FLOATING WHATSAPP BUTTON
+==========================================-->
+
+<a
+    href="https://wa.me/2349152345735?text=Hello%20TAMP%20Consulting,%20I'm%20interested%20in%20your%20services."
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chat with TAMP Consulting on WhatsApp"
+>
+
+    <span class="whatsapp-tooltip">
+
+        Chat with us
+
+    </span>
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
 
 <footer>
 
@@ -264,6 +372,13 @@
     </p>
 
 </footer>
+
+
+ <!-- ===========================
+         JavaScript
+    ============================ -->
+
+    <script src="script.js"></script>
 
 </body>
 </html>
