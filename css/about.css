@@ -1,0 +1,122 @@
+/*=========================================
+            ABOUT SECTION
+=========================================*/
+
+.about{
+    padding:100px 0;
+    background:#ffffff;
+}
+
+.about-grid{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+
+}
+
+/*=========================================
+            IMAGE
+=========================================*/
+
+.about-grid img{
+
+    width:100%;
+    border-radius:20px;
+
+    display:block;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+    transition:.4s ease;
+
+}
+
+.about-grid img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/*=========================================
+            TEXT
+=========================================*/
+
+.about-grid h2{
+
+    font-size:2.8rem;
+
+    color:#0F172A;
+
+    margin-bottom:25px;
+
+    position:relative;
+
+    line-height:1.2;
+
+}
+
+.about-grid h2::after{
+
+    content:"";
+
+    width:80px;
+
+    height:4px;
+
+    background:#2563EB;
+
+    display:block;
+
+    margin-top:15px;
+
+    border-radius:20px;
+
+}
+
+.about-grid p{
+
+    font-size:1.05rem;
+
+    color:#555;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:900px){
+
+.about-grid{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+    text-align:center;
+
+}
+
+.about-grid h2{
+
+    font-size:2.2rem;
+
+}
+
+.about-grid h2::after{
+
+    margin:15px auto 0;
+
+}
+
+}
