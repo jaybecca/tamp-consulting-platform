@@ -28,7 +28,7 @@
           content="TAMP CONSULTING | Recruitment .Outsourcing .Training/Development">
 
     <meta property="og:image"
-          content="https://tampconsulting.space/images/og-image.jpg">
+          content="https://tampconsulting.space/images/og-image.png">
 
     <meta property="og:type"
           content="website">
@@ -50,7 +50,7 @@
           content="TAMP CONSULTING | Recruitment .Outsourcing .Training/Development">
 
     <meta name="twitter:image"
-          content="images/og-image.jpg">
+          content="images/og-image.png">
 
 
     <!-- ===========================
@@ -99,6 +99,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
+<style>
+  .logo a { display:inline-flex; align-items:center; }
+  .logo a img { width:225px; height:76px; max-width:100%; object-fit:contain; object-position:center; display:block; }
+  @media (max-width:760px) { .logo a img { width:190px; height:64px; } }
+</style>
 </head>
 
 <body>
@@ -109,8 +114,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     <div class="container nav">
 
         <div class="logo">
-            <img src="images/logo.png" alt="TAMP Consulting">
-            <h2>TAMP Consulting</h2>
+            <a href="/">
+                <img src="images/logo.png" alt="TAMP Consulting logo">
+           </a>
+        
         </div>
 
         <ul class="nav-links">
@@ -121,7 +128,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             <li><a href="#about">About</a></li>
 
+           <li><a href="blog.html">Blog</a></li>
+
             <li><a href="#contact">Contact</a></li>
+
+            
 
         </ul>
 
@@ -215,8 +226,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                         loading="lazy">
                 <h3>Talent Acquisition</h3>
                 <p>
-                    We connect organizations with highly
-                    qualified professionals who fit both
+                    The right hire can change everything. We go beyond resumes 
+                    to find professionals who bring the skills, experience, mindset, 
+                    and values your organization needs. From the first shortlist to the 
+                    final placement, we help you avoid costly hiring mistakes and 
+                    build teams that perform, collaborate, and stay. Your next great hire 
+                    is out there. Let’s find them to grow your business. 
+                    We connect organizations with highly qualified professionals who fit both
                     technical and cultural requirements.
                 </p>
             </div>
@@ -229,9 +245,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                         loading="lazy">
                 <h3>HR Outsourcing</h3>
                 <p>
-                    Streamline workforce management while
-                    reducing operational costs through our
-                    outsourcing solutions.
+                    Your business is growing, but suddenly payroll is due, 
+                    CVs need reviewing, employee records are piling up, 
+                    taxes are approaching, and administrative work is stealing time 
+                    from your customers. You don’t have to do it all.
+                    
+                    <br> TAMP Consulting handles the behind-the-scenes work.
+                    CV writing and recruitment support, payroll, accounting, tax administration,
+                    employee records, and everyday administrative duties, 
+                    so micro and retail businesses can operate professionally 
+                    without the cost of a full in-house team. We handle the work. 
+                    You focus on growing the business. </br>
                 </p>
             </div>
 
@@ -243,8 +267,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                           loading="lazy">
                 <h3>Training & Development</h3>
                 <p>
-                    Upskill your workforce with practical,
-                    industry-focused learning programs.
+                    Your team doesn’t need another course they’ll forget by Monday. 
+                    They need skills they can use when the pressure is real. 
+                    TAMP Consulting delivers practical, industry-focused training 
+                    that turns knowledge into confident action—closing skill gaps, 
+                    improving performance, and preparing your people for what’s next. 
+                    Build a workforce that learns, adapts, performs, and grows with your business.
+                    Upskill your workforce with practical, industry-focused learning programs.
                 </p>
             </div>
 
@@ -472,7 +501,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     <input
                         type="hidden"
                         name="access_key"
-                        value="21ba3191-e405-4565-b107-a631ae47548b">
+                        value="d3d05467-2c96-496f-b85d-31e59aa114d7">
 
                     <input
                         type="hidden"
@@ -625,15 +654,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                         <h4>Email</h4>
 
-                        <a href="mailto:info@tampconsulting.space">
-                            info@tampconsulting.space
+                        <a href="mailto:hello@tampconsulting.space">
+                            hello@tampconsulting.space
                         </a>
 
                     </div>
 
                 </div>
 
-            </div>
+                 <div class="contact-item">
+    <div class="contact-icon">
+        <i class="fas fa-blog"></i>
+    </div>
+
+    <div class="contact-text">
+        <h4>Blog</h4>
+
+       <a href="blog.html">
+            Read our HR insights →
+        </a>
+    </div>
+</div>
+                 
 
             <!-- Social Icons -->
 
@@ -649,7 +691,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 rel="noopener">
                     <i class="fab fa-instagram"></i></a>
 
-                <a href="https://linkedin.com/tampconsulting"
+                <a href="https://linkedin.com/company/tampconsulting"
                 target="_blank"
                 rel="noopener">
                     <i class="fab fa-linkedin-in"></i></a>
@@ -710,10 +752,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <div class="footer-divider"></div>
 
-    <p>
-        © <span id="currentYear"></span>
-        TAMP Consulting. All Rights Reserved.
-    </p>
+    <p>© <span id="currentYear"></span> TAMP Consulting. All Rights Reserved.</p>
 
     <small>
         Empowering Businesses Through People.
