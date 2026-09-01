@@ -1,0 +1,15 @@
+.git
+.github
+.scannerwork
+.vscode
+.DS_Store
+*.log
+node_modules
+.env
+.env.*
+*.key
+*.pem
+*.crt
+sonar-project.properties
+Jenkinsfile
+README.md

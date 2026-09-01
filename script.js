@@ -1,5 +1,77 @@
 
 
+/*====================================================
+        MOBILE NAVIGATION
+=====================================================*/
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("show");
+
+        const isOpen = navLinks.classList.contains("show");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+
+        menuToggle.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+
+    });
+
+
+    /* Close menu after selecting a navigation link */
+
+    navLinks.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("show");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.innerHTML =
+                '<i class="fas fa-bars"></i>';
+
+        });
+
+    });
+
+
+    /* Close menu if the user clicks outside it */
+
+    document.addEventListener("click", (event) => {
+
+        const clickedInsideMenu =
+            navLinks.contains(event.target);
+
+        const clickedToggle =
+            menuToggle.contains(event.target);
+
+        if (
+            !clickedInsideMenu &&
+            !clickedToggle &&
+            navLinks.classList.contains("show")
+        ) {
+
+            navLinks.classList.remove("show");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.innerHTML =
+                '<i class="fas fa-bars"></i>';
+
+        }
+
+    });
+
+}
+
+
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {

@@ -1328,15 +1328,27 @@ window.hrBlogPosts = [
     const filters = document.getElementById("blogFilters");
     const resultsCount = document.getElementById("resultsCount");
     const featured = document.getElementById("featuredPost");
-
+    const menuToggle = document.getElementById("hrMenuToggle");
+    const navLinks = document.getElementById("hrNavLinks");
     const modal = document.getElementById("articleModal");
     const modalCategory = document.getElementById("modalCategory");
     const modalTitle = document.getElementById("modalTitle");
     const modalContent = document.getElementById("modalContent");
     const modalClose = document.getElementById("modalClose");
 
-    if (!grid || !searchInput || !searchButton || !clearButton || !filters || !resultsCount || !featured || !modal) {
-      console.error("TAMP Blog: required HTML elements were not found.");
+    if (
+  !grid ||
+  !searchInput ||
+  !searchButton ||
+  !clearButton ||
+  !filters ||
+  !resultsCount ||
+  !featured ||
+  !modal ||
+  !menuToggle ||
+  !navLinks
+) 
+  {  console.error("TAMP Blog: required HTML elements were not found.");
       return;
     }
 
@@ -1561,6 +1573,59 @@ window.hrBlogPosts = [
         closeArticle();
       }
     });
+
+
+    /*====================================================
+MOBILE NAVIGATION
+=====================================================*/
+
+function closeMobileMenu() {
+  navLinks.classList.remove("is-open");
+  menuToggle.classList.remove("is-open");
+
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+}
+
+menuToggle.addEventListener("click", function () {
+
+  const isOpen = navLinks.classList.toggle("is-open");
+
+  menuToggle.classList.toggle("is-open", isOpen);
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+
+});
+
+/* Close menu after selecting a navigation link */
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+
+  link.addEventListener("click", function () {
+    closeMobileMenu();
+  });
+
+});
+
+/* Close menu with Escape */
+
+document.addEventListener("keydown", function (event) {
+
+  if (
+    event.key === "Escape" &&
+    navLinks.classList.contains("is-open")
+  ) {
+    closeMobileMenu();
+    menuToggle.focus();
+  }
+
+});
+
 
     renderFeatured();
     renderFilters();
