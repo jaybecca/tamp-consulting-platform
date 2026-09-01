@@ -20,9 +20,16 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 # --------------------------------------------------
-# Website
+# Website — copy only production assets
 # --------------------------------------------------
-COPY . /usr/share/nginx/html
+COPY index.html 404.html blog.html blog.css blog.js script.js robots.txt sitemap.xml site.webmanifest /usr/share/nginx/html/
+COPY css/ /usr/share/nginx/html/css/
+COPY images/ /usr/share/nginx/html/images/
+
+# --------------------------------------------------
+# Remove default Nginx error page
+# --------------------------------------------------
+RUN rm -f /usr/share/nginx/html/50x.html
 
 # --------------------------------------------------
 # Non-root ownership + immutable application files
