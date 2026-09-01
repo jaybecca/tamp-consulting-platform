@@ -5,8 +5,8 @@ FROM nginx:alpine
 # --------------------------------------------------
 RUN apk update \
     && apk upgrade \
+    && apk add --no-cache libexpat \
     && rm -rf /var/cache/apk/*
-
 # --------------------------------------------------
 # Remove default Nginx configuration and entrypoint
 # --------------------------------------------------
