@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Check for exposed secrets
         uses: gitleaks/gitleaks-action@v2
@@ -28,19 +30,8 @@ jobs:
       - name: Check project files
         run: |
           echo "Checking for suspicious secret patterns..."
-
-          if grep -RniE \
-            'password[[:space:]]*[:=]|secret[[:space:]]*[:=]|access[_-]?key[[:space:]]*[:=]|api[_-]?key[[:space:]]*[:=]|private[_-]?key[[:space:]]*[:=]' \
-            . \
-            --exclude-dir=.git \
-            --exclude-dir=.github \
-            --exclude='*.jpg' \
-            --exclude='*.jpeg' \
-            --exclude='*.png' \
-            --exclude='*.gif' \
-            --exclude='*.svg'; then
-
-            echo "Potential secret detected."
+          if grep -RniE 'password[[:space:]]*[:=]|secret[[:space:]]*[:=]|access[_-]?key[[:space:]]*[:=]|api[_-]?key[[:space:]]*[:=]|private[_-]?key[[:space:]]*[:=]' . --exclude-dir=.git --exclude-dir=.github --exclude='*.jpg' --exclude='*.jpeg' --exclude='*.png' --exclude='*.gif' --exclude='*.svg'; then
+            echo "Potential hard-coded secret detected."
             exit 1
           else
             echo "No obvious hard-coded secrets detected."
@@ -49,19 +40,36 @@ jobs:
       - name: Validate HTML files
         run: |
           echo "HTML files found:"
-          find . -maxdepth 2 -name "*.html" -print
+          find . -maxdepth 3 -name "*.html" -print
 
       - name: Validate JavaScript files
         run: |
           echo "JavaScript files found:"
-          find . -maxdepth 2 -name "*.js" -print
+          find . -maxdepth 3 -name "*.js" -print
 
       - name: Validate CSS files
         run: |
           echo "CSS files found:"
-          find . -maxdepth 2 -name "*.css" -print
+          find . -maxdepth 3 -name "*.css" -print
+
+      - name: Build Docker image
+        run: |
+          docker build --no-cache -t tamp-consulting:ci .
+
+      - name: Install Trivy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install -y trivy
+
+      - name: Scan Docker image with Trivy
+        run: |
+          trivy image --exit-code 1 --severity CRITICAL,HIGH --ignore-unfixed tamp-consulting:ci
 
       - name: Repository status
         run: |
           git status --short
-          echo "Security CI checks completed."
+          echo "Security CI checks completed successfully."
