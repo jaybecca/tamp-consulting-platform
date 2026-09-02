@@ -76,9 +76,9 @@ rel="manifest"
 href="site.webmanifest">
 
     <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -196,12 +196,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
         <div class="hero-image">
 
-            <img src="images/hero.jpg"
-                 width="600"
-                 height="450"
-                 alt="Business Consulting"
-                 loading="lazy">
-
+           <img src="images/hero.jpg"
+     width="600"
+     height="450"
+     alt="Business Consulting"
+     loading="eager"
+     fetchpriority="high"
+     decoding="async">
         </div>
 
     </div>
@@ -229,7 +230,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                         width="600"
                         height="450"
                         alt=""
-                        loading="lazy">
+                        loading="lazy"
+                        decoding="async">
                 <h3>Talent Acquisition</h3>
                 <p>
                     The right hire can change everything. We go beyond resumes 
@@ -247,7 +249,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                         width="600"
                         height="450"
                         alt=""
-                        loading="lazy">
+                        loading="lazy"
+                        decoding="async">
                 <h3>HR Outsourcing</h3>
                 <p>
                     Your business is growing, but suddenly payroll is due, 
@@ -269,7 +272,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                           width="600"
                           height="450"
                           alt=""
-                          loading="lazy">
+                          loading="lazy"
+                          decoding="async">
                 <h3>Training & Development</h3>
                 <p>
                     Your team doesn’t need another course they’ll forget by Monday. 
@@ -296,7 +300,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <div>
             <img src="images/about.jpg"
                  alt=""
-                 loading="lazy">
+                 loading="lazy"
+                 decoding="async">
         </div>
 
         <div>
@@ -481,7 +486,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <div class="contact-image">
             <img src="images/contact.jpg"
                     alt="Contact TAMP Consulting"
-                    loading="lazy">
+                    loading="lazy"
+                    decoding="async">
         </div>
 
         <!-- Right Column -->
