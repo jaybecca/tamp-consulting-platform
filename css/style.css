@@ -34,19 +34,21 @@ RESET
 }
 
 html{
-
     scroll-behavior:smooth;
-
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 body{
-
+    width:100%;
+    max-width:100%;
+    margin:0;
     font-family:'Poppins',sans-serif;
     color:var(--dark);
     background:var(--white);
     overflow-x:hidden;
     line-height:1.7;
-
 }
 
 img{

@@ -443,14 +443,7 @@ MOBILE NAVIGATION
 
 /* SEARCH / FILTER - ONE ROW */
 .hr-controls {
-  margin-top: 45px;
-  width: 100%;
-  min-width: 0;
-  display: grid;
-  grid-template-columns: 24px minmax(260px, 1fr) auto auto minmax(190px, 240px);
-  align-items: center;
-  gap: 10px;
-  min-height: 53px;
+  grid-template-columns: minmax(260px, 1fr) auto auto minmax(190px, 240px);
 }
 
 .hr-search-icon {
@@ -850,8 +843,7 @@ MOBILE NAVIGATION
 /* RESPONSIVE */
 @media (max-width: 1000px) {
   .hr-controls {
-    grid-template-columns: 24px minmax(210px, 1fr) auto auto minmax(170px, 220px);
-    gap: 8px;
+    grid-template-columns: minmax(210px, 1fr) auto auto minmax(170px, 220px);
   }
 
   .hr-blog-grid {
@@ -958,30 +950,55 @@ MOBILE NAVIGATION
     color: var(--hr-blue-bright);
   }
 
-  /* Search / filter remains horizontally scrollable */
+   /* Search / filter — two full-width rows on mobile */
 
-  .hr-controls {
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scrollbar-width: thin;
-    grid-template-columns:
-      24px
-      minmax(230px, 1fr)
-      auto
-      auto
-      190px;
-  }
+.hr-controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+  overflow: visible;
+  padding-bottom: 0;
+}
 
-  .hr-search-field {
-    min-width: 230px;
-  }
+/* Row 1 — full-width search */
 
-  .hr-topic-select {
-    min-width: 190px;
-  }
+.hr-search-field {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+}
 
-  .hr-filter-label {
-    white-space: nowrap;
+/* Hide the separate Search button on mobile */
+
+.hr-search-button {
+  display: none;
+}
+
+/* Row 2 — category filter */
+
+.hr-filter-label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.hr-topic-select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+  /* Keep the search icon clean */
+
+  .hr-search-field input[type="search"]::-webkit-search-decoration,
+  .hr-search-field input[type="search"]::-webkit-search-cancel-button,
+  .hr-search-field input[type="search"]::-webkit-search-results-button,
+  .hr-search-field input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .hr-blog-grid {

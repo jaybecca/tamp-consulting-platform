@@ -225,7 +225,13 @@
 
     width:100%;
 
-    max-width:500px;
+    max-width:560px;
+
+    aspect-ratio:4 / 3;
+
+    object-fit:cover;
+
+    object-position:center;
 
     border-radius:24px;
 
@@ -233,7 +239,6 @@
         0 25px 60px rgba(0,0,0,.30);
 
     animation:heroFloat 5s ease-in-out infinite;
-
 }
 
 
@@ -388,10 +393,19 @@
 
 }
 
-.hero-image img{
+/* MOBILE HERO IMAGE */
+    .hero-image{
+        width:100%;
+        overflow:hidden;
+        margin-top:30px;
+    }
 
-    max-width:350px;
-
-}
-
+    .hero-image img{
+        width:100%;
+        height:auto;
+        max-width:none;
+        aspect-ratio:auto;
+        object-fit:contain;
+        object-position:center;
+    }
 }
