@@ -23,7 +23,7 @@ pipeline {
                 docker rm tamp-site || true
 
                 docker run -d \
-                  -p 8082:80 \
+                 -p 8082:8080 \
                   --name tamp-site \
                   tamp-consulting
                 '''
