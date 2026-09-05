@@ -1,0 +1,5 @@
+name = "tamp-consulting-platform"
+compatibility_date = "2026-09-05"
+
+[assets]
+directory = "./public"

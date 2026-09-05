@@ -1,0 +1,163 @@
+/*====================================================
+  TAMP CONSULTING
+  GLOBAL STYLES
+=====================================================*/
+
+:root{
+
+    /* Brand Colors */
+    --primary:#005B96;
+    --secondary:#F58220;
+
+    /* Neutral Colors */
+    --white:#ffffff;
+    --light:#f7f9fc;
+    --gray:#6b7280;
+    --dark:#1f2937;
+    --border:#e5e7eb;
+
+    /* Effects */
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:12px;
+    --transition:.35s ease;
+
+}
+
+/*==============================
+RESET
+==============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    color:var(--dark);
+    background:var(--white);
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/*==============================
+CONTAINER
+==============================*/
+
+.container{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+}
+
+section{
+
+    padding:100px 0;
+
+}
+
+/*==============================
+TYPOGRAPHY
+==============================*/
+
+h1,
+h2,
+h3{
+
+    font-weight:700;
+    line-height:1.2;
+
+}
+
+h1{
+
+    font-size:3.5rem;
+
+}
+
+h2{
+
+    font-size:2.5rem;
+    color:var(--primary);
+
+}
+
+h3{
+
+    font-size:1.3rem;
+
+}
+
+p{
+
+    color:var(--gray);
+    font-size:1rem;
+
+}
+
+/*==============================
+BUTTON
+==============================*/
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 38px;
+
+    background:var(--secondary);
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    box-shadow:0 8px 20px rgba(245,130,32,.35);
+
+}
+
+.btn:hover{
+
+    background:#ff9736;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 14px 30px rgba(245,130,32,.45);
+
+}

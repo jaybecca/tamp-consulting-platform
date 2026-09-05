@@ -6,6 +6,7 @@ FROM nginx:alpine
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache libexpat \
+    && apk upgrade --no-cache util-linux libuuid \
     && rm -rf /var/cache/apk/*
 # --------------------------------------------------
 # Remove default Nginx configuration and entrypoint
@@ -22,9 +23,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 # --------------------------------------------------
 # Website — copy only production assets
 # --------------------------------------------------
-COPY index.html 404.html blog.html blog.css blog.js script.js robots.txt sitemap.xml site.webmanifest /usr/share/nginx/html/
-COPY css/ /usr/share/nginx/html/css/
-COPY images/ /usr/share/nginx/html/images/
+COPY public/index.html public/404.html public/blog.html public/blog.css public/blog.js public/script.js public/robots.txt public/sitemap.xml public/site.webmanifest /usr/share/nginx/html/
+COPY public/css/ /usr/share/nginx/html/css/
+COPY public/images/ /usr/share/nginx/html/images/
 
 # --------------------------------------------------
 # Remove default Nginx error page

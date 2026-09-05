@@ -1,0 +1,87 @@
+/*=====================================
+        WHY CHOOSE US
+=====================================*/
+
+.features{
+    padding:100px 0;
+    background:#f8f9fc;
+}
+
+.features h2{
+    text-align:center;
+    font-size:2.6rem;
+    color:#1f2937;
+    margin-bottom:60px;
+    position:relative;
+}
+
+.features h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#2563eb;
+    display:block;
+    margin:18px auto 0;
+    border-radius:30px;
+}
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+
+}
+
+.feature-grid div{
+
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+    border-top:5px solid #2563eb;
+
+}
+
+.feature-grid div:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+
+}
+
+.feature-grid h3{
+
+    color:#2563eb;
+    font-size:1.3rem;
+    margin-bottom:15px;
+
+}
+
+.feature-grid p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+@media(max-width:768px){
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.features h2{
+
+font-size:2rem;
+
+}
+
+}

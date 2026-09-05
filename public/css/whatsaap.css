@@ -1,0 +1,75 @@
+/* ===========================
+   Floating Buttons
+=========================== */
+
+.back-to-top,
+.whatsapp-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:26px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.3s;
+    z-index:9999;
+}
+
+/* Back To Top */
+
+.back-to-top{
+    right:25px;
+    bottom:100px;
+    border:none;
+    cursor:pointer;
+    background:#005B96;
+    opacity:0;
+    visibility:hidden;
+}
+
+.back-to-top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.back-to-top:hover{
+    background:#F58220;
+    transform:translateY(-5px);
+}
+
+/* WhatsApp */
+
+.whatsapp-float{
+    right:25px;
+    bottom:25px;
+    background:#25D366;
+}
+
+.whatsapp-float:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+/* Tooltip */
+
+.whatsapp-tooltip{
+    position:absolute;
+    right:75px;
+    background:#111;
+    color:#fff;
+    padding:8px 14px;
+    border-radius:25px;
+    font-size:14px;
+    white-space:nowrap;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip{
+    opacity:1;
+    visibility:visible;
+}

@@ -1,0 +1,91 @@
+/*=====================================
+            FOOTER
+=====================================*/
+
+footer{
+
+    background:linear-gradient(135deg,#1e3a8a,#013151);
+
+    color:#ffffff;
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    margin-top:80px;
+
+    box-shadow:0 -8px 25px rgba(0,0,0,.08);
+
+}
+
+footer p{
+
+    margin:0;
+
+    font-size:15px;
+
+    letter-spacing:.5px;
+
+    color:#f8fafc;
+
+}
+
+footer #currentYear{
+
+    font-weight:700;
+
+    color:#fbbf24;
+
+}
+
+/*=========================
+        MOBILE
+=========================*/
+
+@media(max-width:768px){
+
+footer{
+
+    padding:22px 15px;
+
+}
+
+footer p{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+}
+
+.footer-divider{
+
+    width:90px;
+
+    height:3px;
+
+    background:#fbbf24;
+
+    margin:0 auto 20px;
+
+    border-radius:50px;
+
+}
+
+footer small{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#dbeafe;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}

@@ -1,0 +1,163 @@
+
+/*====================================================
+NAVIGATION
+=====================================================*/
+
+.nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 55px;
+}
+
+
+/*====================================================
+DESKTOP NAVIGATION
+=====================================================*/
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--dark);
+    font-weight: 600;
+    position: relative;
+    transition: .3s;
+    text-decoration: none;
+}
+
+/* Underline Animation */
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 20px;
+    transition: .35s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Active Link */
+
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/*====================================================
+HAMBURGER MENU
+=====================================================*/
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: var(--primary);
+    z-index: 1100;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*====================================================
+MOBILE NAVIGATION
+=====================================================*/
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(255, 255, 255, .98);
+        backdrop-filter: blur(10px);
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 15px 25px 25px;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+
+        border-top: 1px solid rgba(0, 0, 0, .05);
+
+        z-index: 1050;
+    }
+
+    /* OPEN MENU */
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+
+        padding: 15px 5px;
+
+        font-size: 1rem;
+    }
+
+    /* Remove desktop underline animation on mobile */
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .nav-links a.active {
+        color: var(--primary);
+    }
+
+}
