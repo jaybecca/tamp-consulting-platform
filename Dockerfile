@@ -5,7 +5,7 @@ FROM nginx:alpine
 # --------------------------------------------------
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache libexpat \
+    && apk add --no-cache 'libexpat>=2.8.5-r0' \
     && apk upgrade --no-cache util-linux libuuid \
     && rm -rf /var/cache/apk/*
 # --------------------------------------------------

@@ -1,5 +1,4 @@
-user-agent: *
-
+User-agent: *
 Allow: /
 
 Sitemap: https://tampconsulting.space/sitemap.xml

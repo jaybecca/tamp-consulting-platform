@@ -235,3 +235,26 @@ const observer = new IntersectionObserver(entries => {
 });
 
 counters.forEach(counter=>observer.observe(counter));
+/*====================================================
+        PREMIUM SERVICES FILTER
+=====================================================*/
+
+const serviceFilters = document.querySelectorAll(".service-filter");
+const catalogGroups = document.querySelectorAll(".catalog-group");
+
+if (serviceFilters.length && catalogGroups.length) {
+    serviceFilters.forEach((button) => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.filter;
+
+            serviceFilters.forEach((item) => item.classList.remove("active"));
+            button.classList.add("active");
+
+            catalogGroups.forEach((group) => {
+                const groups = (group.dataset.group || "").split(" ");
+                const show = filter === "all" || groups.includes(filter);
+                group.classList.toggle("is-hidden", !show);
+            });
+        });
+    });
+}
